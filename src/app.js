@@ -5,6 +5,8 @@ const geoCode = require('./utils/geoCode')
 const forecast = require('./utils/forecast')
 
 const app = express()
+const port = process.env.PORT || 3000  //if exsist. or 3000 if heroku does not exist - so 3000 is localy 
+
 
 console.log(__dirname)
 console.log(path.join(__dirname,'../public'))
@@ -112,6 +114,6 @@ app.get('*',(req,res) => {
 
 
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("Server is up! - //port 3000")
 })
